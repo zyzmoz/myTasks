@@ -1,6 +1,6 @@
 ## React Boilerplate
 
-This boilerplate use Parcer as bundler and React Foundation as UI components!
+This boilerplate use Parcel as bundler and React Foundation as UI components!
 
 ## Usage
 
