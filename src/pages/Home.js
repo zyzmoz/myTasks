@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Intent, Callout, Button } from "@blueprintjs/core";
+import { Message, Button } from 'semantic-ui-react';
 
 class HomePage extends Component {
   constructor(){
@@ -8,18 +8,28 @@ class HomePage extends Component {
       click: 0
     }
   }
+
+  sum(a, b){
+    return a + b;
+  }
+
   render(){
     let msg = "";
     if (this.state.click > 0)
       msg = "Click count: " + this.state.click;
 
     return(
-      <div className="grid-container">
-        <Callout intent={Intent.PRIMARY}>
-          <h2>Hello World</h2>
-        </Callout>
-        <p>{msg}</p>
-        <Button onClick={() => this.setState({click: this.state.click + 1})} intent={Intent.SECONDARY}>Here</Button>
+      <div className="padding">
+      <Message>
+        <Message.Header>
+          Hello
+        </Message.Header>
+        <p>
+          Clicks: {this.state.click}
+        </p>
+      </Message>
+      <Button primary onClick={() => this.setState({click: this.state.click + 1})}>Click</Button>
+
       </div>
     );
   }
