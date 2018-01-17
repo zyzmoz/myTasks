@@ -12,7 +12,7 @@ class HomePage extends Component {
   render(){
     let msg = "";
     if (this.state.click > 0)
-      msg = "Click count: " + this.state.click;      
+      msg = "Click count: " + this.state.click;
 
     return(
       <div className="grid-container">
