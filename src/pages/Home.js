@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Foundation,{ Callout, Colors, Button } from 'react-foundation';
-
+import { Intent, Callout, Button } from "@blueprintjs/core";
 
 class HomePage extends Component {
   constructor(){
@@ -16,11 +15,11 @@ class HomePage extends Component {
 
     return(
       <div className="grid-container">
-        <Callout color={Colors.PRIMARY}>
+        <Callout intent={Intent.PRIMARY}>
           <h2>Hello World</h2>
         </Callout>
         <p>{msg}</p>
-        <Button onClick={() => this.setState({click: this.state.click + 1})} color={Colors.SECONDARY}>Here</Button>
+        <Button onClick={() => this.setState({click: this.state.click + 1})} intent={Intent.SECONDARY}>Here</Button>
       </div>
     );
   }
