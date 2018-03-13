@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './pages/Home';
+import App from './components/App';
 import 'semantic-ui-css/semantic.min.css';
 import './assets/css/master.css';
 
 ReactDOM.render(
-  <HomePage />,
+  <App />,
   document.getElementById('root')
 );
