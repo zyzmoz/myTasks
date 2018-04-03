@@ -4,7 +4,7 @@ import MenuComponent from './Menu';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const App = () =>
-  <Router history={history}>
+  <Router >
     <div>
       <MenuComponent />
       <Route exact path="/"
