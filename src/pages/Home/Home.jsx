@@ -19,7 +19,7 @@ class HomePage extends Component {
     return (
       <div className="page">
         <SearchBar />
-        <div className="padding">
+        <div className="content padding">
           <Switch>
             <Route exact path="/" component={TaskFeed} />
             <Route exact path="/archive" component={Archive} />

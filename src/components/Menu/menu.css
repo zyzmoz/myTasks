@@ -1,8 +1,9 @@
 .menu {  
   position: relative;
+  display: block;
   float: left;
   width: 15%;
-  height: 100vh;
+  height: 97.908vh;
   min-width: 150px;
   background-color: #434a54;
   color: #f2f2f2;  

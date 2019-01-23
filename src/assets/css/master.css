@@ -144,10 +144,34 @@ li {
   padding: 25px;
 }
 
-.page {  
-  float: left;  
-  width: 85%;
-  max-width: calc(100% - 150px);  
+.page {    
+  float: left; 
+  overflow: hidden;  
+  /* min-width: 85%;  
+  max-width: calc(85% - 150px);    */
+  /* width: auto; 
+  min-width: 85%;
+  margin: 0 auto;
+  max-width: calc(100% - 150px);   */
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper:after, .wrapper:after:before {
+  content: " ";
+  display: table;
+}
+
+.wrapper:after {
+  clear: both;
+}
+
+.content {
+  /* padding-top: 80px; */
+  width: 100%;
 }
 
 
