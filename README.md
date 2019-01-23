@@ -1,15 +1,16 @@
-## React Boilerplate
+## MyTask
 
-This boilerplate use: 
+This project use: 
 -Parcel as bundler 
--React Semantic UI as UI framework 
--Redux as state manager
--Jest to test all the stuff!
+-React 
+-Redux 
+-Jest 
+-CSS
 
 ## Usage
 
 ```bash
-git clone https://github.com/zyzmoz/reactboiler
+git clone https://github.com/zyzmoz/myTask
 ```
 
 Install NPM packages:
