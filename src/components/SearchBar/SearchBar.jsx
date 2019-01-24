@@ -6,7 +6,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <div className="item">
+        <div className="content">        
           <SearchInput />
         </div>
       </div>

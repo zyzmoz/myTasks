@@ -17,9 +17,9 @@ class HomePage extends Component {
   render() {
 
     return (
-      <div className="page">
+      <div >
         <SearchBar />
-        <div className="content padding">
+        <div className="page">
           <Switch>
             <Route exact path="/" component={TaskFeed} />
             <Route exact path="/archive" component={Archive} />

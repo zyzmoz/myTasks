@@ -1,13 +1,12 @@
 .search-bar {
-  position: absolute;
+  position: relative;
+  float: left;
   height: 80px;
-  width: 100%;
+  max-width: 85%;
+  min-width: 85%;  
   background-color: #f2f2f2;
 }
 
-.item {  
-  position: relative;
-  display: flex;
-  width: 500px;  
-  margin: 20px 0 0 20px;
+.input.search input {
+  width: 500px;
 }

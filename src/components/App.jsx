@@ -6,8 +6,7 @@ import Modal from './Modal/Modal';
 
 const App = () =>
   <Router >
-    <div className="wrapper">
-      {/* <Modal component={() => <HomePage />}/> */}
+    <div className="master wrapper">      
       <Menu />
       <HomePage />      
     </div>
