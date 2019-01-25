@@ -1,0 +1,14 @@
+.form {
+  width:450px;
+}
+
+.form input {
+  width: 94%;
+  margin-bottom:  10px;
+}
+
+.form button {
+  margin-right: 5px;
+}
+
+

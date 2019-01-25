@@ -1,11 +1,11 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 
-const SearchInput = () => {
+const SearchInput = ({value, event, change}) => {
   return (
     <div className="input search">
-      <input type="text" placeholder="Search" />
-      <button>
+      <input value={value} type="text" placeholder="Search" onChange={e => change(e.target.value)} />
+      <button onClick={event}>
         <Icon.Search />
       </button>
     </div>

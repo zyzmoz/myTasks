@@ -92,7 +92,7 @@ html, body {
 
 .btn {
   padding: 8px;  
-  border-radius: 3px;
+  border-radius: 3px;  
 }
 li {
   padding: 5px;
@@ -132,10 +132,21 @@ li {
 }
 
 
-
+.btn.medium {
+  height: 32px; 
+}
 
 .btn.large {
   height: 48px;  
+}
+
+.btn.danger {
+  color: #f2f2f2;
+  background-color: #ED5565;
+}
+.btn.danger:hover {
+  color: #f2f2f2;
+  background-color: #da4453;
 }
 
 .btn.mint {
@@ -144,6 +155,17 @@ li {
 .btn.mint:hover {
   background-color: #37bc98;
 }
+
+.btn.primary {
+  color: #f2f2f2;
+  background-color: #5d9cec;
+}
+
+.btn.primary:hover {
+  color: #f2f2f2;
+  background-color: #4a89dc;
+}
+
 
 .full {
   display: block;

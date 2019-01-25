@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modalManager';
+import { connect } from 'react-redux';
 import './menu.css';
+import TaskForm from '../TaskForm/TaskForm';
+
+const mapState = (state) => ({
+  modals: state.modalReducer
+})
+
+const actions = {
+  openModal
+}
 
 class Menu extends Component {
   render() {
@@ -10,7 +21,7 @@ class Menu extends Component {
           Task
         </div>
         <div className="menu-action">
-          <button className="btn large full mint">
+          <button onClick={() => this.props.openModal(TaskForm)} className="btn large full mint">
             Create Task
           </button>
         </div>
@@ -25,8 +36,6 @@ class Menu extends Component {
             <li className="menu-item">
               <Link as="li" to="/people" className="menu-item">People</Link>
             </li>
-
-
           </ul>
         </div>
       </div>
@@ -34,4 +43,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default connect(mapState, actions)(Menu);

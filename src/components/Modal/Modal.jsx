@@ -1,15 +1,25 @@
 import React from 'react';
 import './modal.css';
+import { connect } from 'react-redux';
 
-const Modal = ({component}) => {
-  let Component = component;
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <Component />
+const mapState = (state) => ({
+  modals: state.modals
+})
+
+
+
+const Modal = (props) => {  
+  if (!props.modals) {
+    return '';
+  } else {
+    return (
+      <div className="modal">
+        <div className="modal-content">
+          <props.modals.Component />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
-export default Modal;
+export default connect(mapState)(Modal);
