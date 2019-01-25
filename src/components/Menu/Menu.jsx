@@ -6,7 +6,7 @@ import './menu.css';
 import TaskForm from '../TaskForm/TaskForm';
 
 const mapState = (state) => ({
-  modals: state.modalReducer
+  modals: state.modals
 })
 
 const actions = {

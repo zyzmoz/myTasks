@@ -1,55 +1,24 @@
 import React, { Component } from 'react';
 import Task from '../Task/Task';
+import {connect} from 'react-redux';
+
+const mapState = (state) => ({
+  tasks: state.tasks
+});
 
 class TaskList extends Component {
   constructor() {
     super();
-    this.state = {
-      taskList: [
-        {
-          id: 1,
-          createdAt: '',
-          text: 'Do Something',
-          deadline: '',
-          finished: true,
-          finishedAt: '',
-          started: true,
-          startedAt: '',
-          owner: 'Harry'
-        },
-        {
-          id: 2,
-          createdAt: '',
-          text: 'Do another thing',
-          deadline: '',
-          finished: false,
-          finishedAt: '',
-          started: true,
-          startedAt: '',
-          owner: 'Draco'
-        },
-        {
-          id: 3,
-          createdAt: '',
-          text: 'Do homework',
-          deadline: '',
-          finished: false,
-          finishedAt: '',
-          started: false,
-          startedAt: '',
-          owner: 'Draco'
-        }
-      ]
-    }
+    
   }
   render() {
-    let taskList = this.state.taskList;
+    let { list } = this.props.tasks;    
     return (
       <div className="list wrapper">
-        {taskList && taskList.map(task => <Task key={task.id} task={task}/>)}
+        {list && list.map(task => <Task key={task.id} task={task}/>)}
       </div>
     );
   }
 }
 
-export default TaskList;
+export default connect(mapState)(TaskList);
