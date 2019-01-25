@@ -19,9 +19,9 @@ class TaskForm extends Component {
     super();
     this.state = {
       id: null,
-      createdAt: '',
+      createdAt: moment().toDate(),
       text: '',
-      deadline: '',
+      deadline: moment().format('YYYY-MM-DD'),
       finished: false,
       finishedAt: '',
       started: false,
