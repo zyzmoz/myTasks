@@ -4,6 +4,7 @@ import './task-form.css';
 import DateInput from '../../util/DateInput/DateInput';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modalManager';
+import moment from 'moment';
 
 const mapState = (state) => ({
   modals: state.modalReducer
@@ -28,17 +29,22 @@ class TaskForm extends Component {
       owner: ''
     }
   }
+
+  handleChange = (field, value) => {    
+    this.setState({ [field]: value });
+  }
+
   render() {
     return (
       <div className="form">
         <label>Task Description</label>
-        <TextInput placeholder={'Write here your task'} />
+        <TextInput placeholder={'Write here your task'} change={this.handleChange} field={'text'} value={this.state.text} />
         <label>Deadline</label>
-        <DateInput placeholder={'Who should accomplish this task?'} />
+        <DateInput change={this.handleChange} field={"deadline"} value={this.state.deadline} />
         <label>Task Owner</label>
-        <TextInput placeholder={'Who should accomplish this task?'} />
+        <TextInput placeholder={'Who should accomplish this task?'} change={this.handleChange} field={'owner'} value={this.state.owner} />
         <button onClick={() => this.props.closeModal()} className="btn medium danger">Cancel</button>
-        <button onClick={() => this.props.closeModal()} className="btn medium primary">Save</button>
+        <button onClick={() => { console.log(this.state); this.props.closeModal() }} className="btn medium primary">Save</button>
       </div>
     );
   }
