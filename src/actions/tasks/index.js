@@ -35,7 +35,7 @@ export const startTask = (id) => {
   }
 }
 
-export const finishTask = (id) => {
+export const finishTask = (id) => {  
   return {
     type: FINISH_TASK,
     payload: { id }
