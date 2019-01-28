@@ -18,7 +18,7 @@ export const startTask = (state, payload) => {
 }
 
 export const finishTask = (state, payload) => {
-  const { id } = payload;
+  const { id } = payload;  
   const newList = state.list.map(task =>
     task.id === id ? { ...task, finished: true, finishedAt: new Date() } : task
   );
