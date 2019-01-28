@@ -2,7 +2,9 @@ import {
   GET_TASK,
   GET_TASKS,
   SAVE_TASK,
-  DELETE_TASK
+  DELETE_TASK,
+  START_TASK,
+  FINISH_TASK
 } from './contants';
 
 
@@ -22,6 +24,20 @@ export const getTasks = () => {
     type: GET_TASKS,
     payload: { list: []}
   }  
+}
+
+export const startTask = (id) => {
+  return {
+    type: START_TASK,
+    payload: { id }
+  }
+}
+
+export const finishTask = (id) => {
+  return {
+    type: FINISH_TASK,
+    payload: { id }
+  }
 }
 
 export const deleteTask = (id) => {
