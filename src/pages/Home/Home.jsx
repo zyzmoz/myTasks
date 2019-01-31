@@ -6,6 +6,7 @@ import Archive from '../Archive/Archive';
 import People from '../People/People';
 
 
+
 class HomePage extends Component {
   constructor() {
     super();

@@ -3,6 +3,7 @@ import HomePage from '../pages/Home/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Menu from './Menu/Menu';
 import Modal from './Modal/Modal';
+import { withAuthentication } from '../hoc/withAuthentication';
 
 const App = () =>
   <Router >
@@ -13,4 +14,4 @@ const App = () =>
     </div>
   </Router>
 
-export default App;
+export default withAuthentication(App);
