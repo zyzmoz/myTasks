@@ -1,18 +1,19 @@
-import React  from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
 export const withAuthentication = (Component) => {
-  return class extends React.Component {
-    constructor(props){
+  const mapState = (state) => ({
+    auth: state.auth
+  });
+  class AuthHOC extends React.Component {
+    constructor(props) {
       super(props);
-      this.state = {
-        auth: true
-      }
     }
+
     render() {
-      return this.state.auth?<Component />: <div>Unauthorized Access</div>
+      const { authenticated } = this.props.auth;        
+      return authenticated ? <Component /> : <div>Unauthorized Access</div>
     }
   }
-  
-  
-  
+  return connect(mapState)(AuthHOC);
 }
