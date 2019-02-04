@@ -46,15 +46,12 @@ class TaskForm extends Component {
 
   render() {    
     return (
-      <div className="form">
-        <label>Task Description</label>
-        <TextInput placeholder={'Write here your task'} onChange={this.handleChange} value={this.state.text} name="text"/>
-        <label>Deadline</label>
-        <DateInput onChange={this.handleChange} name="deadline" value={this.state.deadline} />
-        <label>Task Owner</label>
-        <TextInput placeholder={'Who should accomplish this task?'} onChange={this.handleChange} name="owner" value={this.state.owner} />
-        <button onClick={() => this.props.closeModal()} className="btn medium danger">Cancel</button>
+      <div className="form">        
+        <TextInput placeholder={'Write here your task'} onChange={this.handleChange} value={this.state.text} name="text" label="Task Description"/>        
+        <DateInput onChange={this.handleChange} name="deadline" value={this.state.deadline} label="Deadline"/>        
+        <TextInput placeholder={'Who should accomplish this task?'} onChange={this.handleChange} name="owner" value={this.state.owner} label="Task Owner"/>        
         <button onClick={() => {this.props.saveTask(this.state); this.props.closeModal() }} className="btn medium primary">Save</button>
+        <button onClick={() => this.props.closeModal()} className="btn medium danger">Cancel</button>
       </div>
     );
   }
