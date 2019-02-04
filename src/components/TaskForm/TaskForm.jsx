@@ -33,23 +33,26 @@ class TaskForm extends Component {
     }
   }
 
-  handleChange = (field, value) => {    
-    this.setState({ [field]: value });
+  handleChange = (e) => {    
+    console.log(e)
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   }
 
   componentDidMount(){
-    this.handleChange('id', this.props.tasks['list']?this.props.tasks.list.length:0);
+    const newTask = { target: {value:this.props.tasks['list']?this.props.tasks.list.length:0, name: 'id'}};    
+    this.handleChange(newTask);
   }
 
   render() {    
     return (
       <div className="form">
         <label>Task Description</label>
-        <TextInput placeholder={'Write here your task'} change={this.handleChange} field={'text'} value={this.state.text} />
+        <TextInput placeholder={'Write here your task'} change={this.handleChange} value={this.state.text} name="text"/>
         <label>Deadline</label>
-        <DateInput change={this.handleChange} field={"deadline"} value={this.state.deadline} />
+        <DateInput change={this.handleChange} name="deadline" value={this.state.deadline} />
         <label>Task Owner</label>
-        <TextInput placeholder={'Who should accomplish this task?'} change={this.handleChange} field={'owner'} value={this.state.owner} />
+        <TextInput placeholder={'Who should accomplish this task?'} change={this.handleChange} name="owner" value={this.state.owner} />
         <button onClick={() => this.props.closeModal()} className="btn medium danger">Cancel</button>
         <button onClick={() => {this.props.saveTask(this.state); this.props.closeModal() }} className="btn medium primary">Save</button>
       </div>

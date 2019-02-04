@@ -11,9 +11,9 @@ export const withAuthentication = (Component) => {
       super(props);
     }
 
-    render() {
-      const { authenticated } = this.props.auth;        
-      return authenticated ? <Component /> : <Redirect to="/login" />
+    render() {      
+      const { authenticated } = this.props.auth;              
+      return authenticated ? <div><Redirect to="/" /><Component /></div> : <Redirect to="/login" />
     }
   }
   return connect(mapState)(AuthHOC);

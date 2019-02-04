@@ -17,7 +17,7 @@ class HomePage extends Component {
 
   render() {
 
-    return (
+    return (      
       <div >
         <SearchBar />
         <div className="page">
