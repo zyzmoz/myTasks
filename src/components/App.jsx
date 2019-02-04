@@ -8,8 +8,8 @@ import Register from '../pages/Register/Register';
 const App = () =>
   <Router >
     <div>
-      <Dash />
-      {/* <Route path="/" component={Dash} /> */}
+      {/* <Dash /> */}
+      <Route path="/" component={Dash} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
     </div>
