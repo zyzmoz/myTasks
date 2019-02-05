@@ -132,10 +132,15 @@ li {
 }
 
 .input.search button:hover {
-  color: #f2f2f2;
-  background-color: #AAb2bd;
+  color: #f2f2f2;  
 }
 
+button:disabled,
+button[disabled] {
+  background-color: inherit;
+  opacity: 0.5;
+
+}
 
 .btn.medium {
   height: 32px; 

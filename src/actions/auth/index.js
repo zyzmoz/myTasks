@@ -1,4 +1,5 @@
 import { LOGIN, LOGOUT, REGISTER } from "./constants";
+import { db } from '../../Firestore';
 
 
 export const login = (username, password) => {
@@ -15,7 +16,8 @@ export const logout = () => {
   }
 }
 
-export const register = () => {
+export const register = (user) => {
+  db.collection('users').add(user);
   return {
     type: REGISTER,
     payload: {}
