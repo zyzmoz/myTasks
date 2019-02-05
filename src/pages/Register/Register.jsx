@@ -34,7 +34,8 @@ class Register extends Component {
   }
 
   doRegister = () => {
-    const newUser = { name, lastname, email, password, username } = this.state;
+    const { name, lastname, email, password, username } = this.state;
+    const newUser = { name, lastname, email, password, username };
     this.props.register(newUser);
   }
 
@@ -70,6 +71,7 @@ class Register extends Component {
             onChange={this.handleChange} value={passwordConfirmation} name="passwordConfirmation"
             placeholder="Password Confirmation" label="Password Confirmation" type="password" />
           <button
+            onClick={() => this.doRegister()}
             disabled={!username || username.length == 0 || !email || email.length == 0 || !password || password.length == 0 || (password !== passwordConfirmation)}
             className="btn primary">Save</button>
           <Link className="btn danger" to="login">Cancel</Link>
