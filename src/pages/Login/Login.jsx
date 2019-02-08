@@ -29,13 +29,15 @@ class Login extends Component {
 
   render() {
     let { username, password} = this.state;
-    console.log(this.state);
+    const { message } = this.props.auth;
+    
     return (
       <div className="login">
         <div className="form">
           <h3>Login</h3>
           <TextInput placeholder="Username" label="Username" onChange={this.handleChange} name="username"/>
           <TextInput placeholder="Password" label="Password" type="password" onChange={this.handleChange} name="password" />
+          {message && <div className="error">{message}</div>}
           <button onClick={() => this.props.login(username, password)} className="btn primary">Login</button>
           <Link className="btn link" to="register">Registrar</Link>
         </div>

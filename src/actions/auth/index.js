@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, REGISTER } from "./constants";
+import { LOGIN, LOGOUT, REGISTER, LOGIN_FAILED } from "./constants";
 import firebase from '../../Firestore';
 
 
@@ -26,6 +26,29 @@ export const login = (username, password) => {
         });
       });
 
+  }
+}
+
+export const loginWithId = (id) => {
+  return async (dispatch) => {
+    const db = firebase.firestore();
+    db.collection('users')
+      .doc(id)
+      .get()
+      .then((snap) => {
+        console.log(snap);
+        if (!snap.exists) {
+          dispatch({
+            type: LOGIN_FAILED,
+            payload: { message: 'Wrong username or password' }
+          });
+        } else {          
+          dispatch({
+            type: LOGIN,
+            payload: { id: id }
+          })
+        }
+      });
   }
 }
 
