@@ -5,7 +5,7 @@ const SearchInput = ({value, event, onChange}) => {
   return (
     <div className="input search">
       <input value={value} type="text" placeholder="Search" onChange={e => onChange(e.target.value)} />
-      <button onClick={event}>
+      <button onClick={() => event(value)}>
         <Icon.Search />
       </button>
     </div>

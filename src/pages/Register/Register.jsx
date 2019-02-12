@@ -35,8 +35,9 @@ class Register extends Component {
 
   doRegister = () => {
     const { name, lastname, email, password, username } = this.state;
-    const newUser = { name, lastname, email, password, username };
+    const newUser = { name, lastname, email, password, username };    
     this.props.register(newUser);
+    this.props.history.goBack();
   }
 
   render() {

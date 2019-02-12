@@ -38,6 +38,7 @@ export const loginWithId = (id) => {
       .then((snap) => {
         console.log(snap);
         if (!snap.exists) {
+          localStorage.removeItem('@myTask:currentUser');
           dispatch({
             type: LOGIN_FAILED,
             payload: { message: 'Wrong username or password' }
@@ -53,6 +54,7 @@ export const loginWithId = (id) => {
 }
 
 export const logout = () => {
+  localStorage.removeItem('@myTask:currentUser');
   return {
     type: LOGOUT,
     payload: {}

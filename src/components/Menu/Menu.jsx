@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modalManager';
+import { logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import './menu.css';
 import TaskForm from '../TaskForm/TaskForm';
@@ -10,7 +11,8 @@ const mapState = (state) => ({
 })
 
 const actions = {
-  openModal
+  openModal,
+  logout
 }
 
 class Menu extends Component {
@@ -35,6 +37,9 @@ class Menu extends Component {
             </li>
             <li className="menu-item">
               <Link as="li" to="/people" className="menu-item">People</Link>
+            </li>
+            <li onClick={() => this.props.logout()} className="menu-item">
+              <p>Logout</p>
             </li>
           </ul>
         </div>

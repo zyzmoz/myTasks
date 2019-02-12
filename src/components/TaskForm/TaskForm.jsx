@@ -20,8 +20,7 @@ const actions = {
 class TaskForm extends Component {
   constructor() {
     super();
-    this.state = {
-      id: null,
+    this.state = {      
       createdAt: moment().toDate(),
       text: '',
       deadline: moment().format('YYYY-MM-DD'),
@@ -33,16 +32,11 @@ class TaskForm extends Component {
     }
   }
 
-  handleChange = (e) => {    
-    console.log(e)
+  handleChange = (e) => {        
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
-  componentDidMount(){
-    const newTask = { target: {value:this.props.tasks['list']?this.props.tasks.list.length:0, name: 'id'}};    
-    this.handleChange(newTask);
-  }
 
   render() {    
     return (

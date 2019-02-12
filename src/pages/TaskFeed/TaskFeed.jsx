@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TaskList from '../../components/TaskList/TaskList';
 import { connect } from 'react-redux';
-import { startTask, finishTask } from '../../actions/tasks';
+import { startTask, finishTask, getTaskFeed } from '../../actions/tasks';
 
 const mapState = (state) => ({
   tasks: state.tasks
@@ -9,11 +9,17 @@ const mapState = (state) => ({
 
 const actions = {
   startTask,
-  finishTask
+  finishTask,
+  getTaskFeed
 }
 
 class TaskFeed extends Component {
-  render() {
+
+  async componentDidMount() {
+    await this.props.getTaskFeed();
+  }
+
+  render() {    
     let { list } = this.props.tasks;
     return (
       <div className="content">
