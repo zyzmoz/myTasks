@@ -4,7 +4,7 @@ This project use:
 -Parcel as bundler 
 -React 
 -Redux 
--Jest 
+-Jest* 
 -CSS
 
 ## Usage
