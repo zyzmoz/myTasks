@@ -20,7 +20,7 @@ class Menu extends Component {
     return (
       <div className="menu">
         <div className="menu-header">
-          Task
+          
         </div>
         <div className="menu-action">
           <button onClick={() => this.props.openModal(TaskForm)} className="btn large full mint">

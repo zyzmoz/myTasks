@@ -37,6 +37,12 @@ class TaskForm extends Component {
     this.setState({ [name]: value });
   }
 
+  saveTask = () => {
+    const userId = localStorage.getItem('@myTask:currentUser');
+    let newTask = {...this.state, userId };
+    this.props.saveTask(newTask);
+  }
+
 
   render() {    
     return (
@@ -44,7 +50,7 @@ class TaskForm extends Component {
         <TextInput placeholder={'Write here your task'} onChange={this.handleChange} value={this.state.text} name="text" label="Task Description"/>        
         <DateInput onChange={this.handleChange} name="deadline" value={this.state.deadline} label="Deadline"/>        
         <TextInput placeholder={'Who should accomplish this task?'} onChange={this.handleChange} name="owner" value={this.state.owner} label="Task Owner"/>        
-        <button onClick={() => {this.props.saveTask(this.state); this.props.closeModal() }} className="btn medium primary">Save</button>
+        <button onClick={() => {this.saveTask(this.state); this.props.closeModal() }} className="btn medium primary">Save</button>
         <button onClick={() => this.props.closeModal()} className="btn medium danger">Cancel</button>
       </div>
     );

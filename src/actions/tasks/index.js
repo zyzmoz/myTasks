@@ -37,8 +37,10 @@ export const filterTask = (str) => {
 export const getTaskFeed = () => {
   return async (dispatch) => {
     const db = firebase.firestore();
+    const userId = localStorage.getItem('@myTask:currentUser');
     await db.collection('tasks')
       .where('finished', '==', false)
+      .where('userId', '==', userId)
       .get()
       .then(snap => {
         let tasks = [];
@@ -59,8 +61,10 @@ export const getTaskFeed = () => {
 export const getTaskArchive = () => {
   return async (dispatch) => {
     const db = firebase.firestore();
+    const userId = localStorage.getItem('@myTask:currentUser');
     await db.collection('tasks')
       .where('finished', '==', true)
+      .where('userId', '==', userId)
       .get()
       .then(snap => {
         let tasks = [];
