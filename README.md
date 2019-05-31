@@ -21,7 +21,7 @@ Install NPM packages:
 ```bash
 npm install
 ```
-Create the firebaseConfig.js based on firebaseConfig.example.js replacing given fields with your Firebase project information.
+Create the firebaseConfig.js based on firebaseConfig.example.json replacing given fields with your Firebase project information.
 
 Start Dev Server
 ```bash
